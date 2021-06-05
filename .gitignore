@@ -1,0 +1,8 @@
+ontheway.pem
+.DS_Store
+db/data/**
+db/scrap/
+**/__pycache__/
+recvae/.ipynb_checkpoints
+
+!db/data/province_info_final.csv

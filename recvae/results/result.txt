@@ -1,0 +1,63 @@
+cmd>python run.py --dataset datasets\ST_stamp_relation_use_filtering
+epoch 0 | valid ndcg@100: 0.64286 | best valid: 0.64286 | train ndcg@100: 0.84726
+epoch 1 | valid ndcg@100: 0.72170 | best valid: 0.72170 | train ndcg@100: 0.90469
+epoch 2 | valid ndcg@100: 0.75052 | best valid: 0.75052 | train ndcg@100: 0.92257
+epoch 3 | valid ndcg@100: 0.76650 | best valid: 0.76650 | train ndcg@100: 0.95038
+epoch 4 | valid ndcg@100: 0.76707 | best valid: 0.76707 | train ndcg@100: 0.95537
+epoch 5 | valid ndcg@100: 0.77613 | best valid: 0.77613 | train ndcg@100: 0.95745
+epoch 6 | valid ndcg@100: 0.78449 | best valid: 0.78449 | train ndcg@100: 0.96144
+epoch 7 | valid ndcg@100: 0.78791 | best valid: 0.78791 | train ndcg@100: 0.96501
+epoch 8 | valid ndcg@100: 0.78579 | best valid: 0.78791 | train ndcg@100: 0.96424
+epoch 9 | valid ndcg@100: 0.78705 | best valid: 0.78791 | train ndcg@100: 0.97171
+epoch 10 | valid ndcg@100: 0.78728 | best valid: 0.78791 | train ndcg@100: 0.97418
+epoch 11 | valid ndcg@100: 0.78912 | best valid: 0.78912 | train ndcg@100: 0.96919
+epoch 12 | valid ndcg@100: 0.79501 | best valid: 0.79501 | train ndcg@100: 0.97320
+epoch 13 | valid ndcg@100: 0.79471 | best valid: 0.79501 | train ndcg@100: 0.97635
+epoch 14 | valid ndcg@100: 0.79863 | best valid: 0.79863 | train ndcg@100: 0.97182
+epoch 15 | valid ndcg@100: 0.79780 | best valid: 0.79863 | train ndcg@100: 0.97457
+epoch 16 | valid ndcg@100: 0.79955 | best valid: 0.79955 | train ndcg@100: 0.97863
+epoch 17 | valid ndcg@100: 0.79440 | best valid: 0.79955 | train ndcg@100: 0.97409
+epoch 18 | valid ndcg@100: 0.79921 | best valid: 0.79955 | train ndcg@100: 0.97823
+epoch 19 | valid ndcg@100: 0.79684 | best valid: 0.79955 | train ndcg@100: 0.97434
+epoch 20 | valid ndcg@100: 0.79930 | best valid: 0.79955 | train ndcg@100: 0.97440
+epoch 21 | valid ndcg@100: 0.79851 | best valid: 0.79955 | train ndcg@100: 0.97658
+epoch 22 | valid ndcg@100: 0.80267 | best valid: 0.80267 | train ndcg@100: 0.98162
+epoch 23 | valid ndcg@100: 0.79932 | best valid: 0.80267 | train ndcg@100: 0.97629
+epoch 24 | valid ndcg@100: 0.80555 | best valid: 0.80555 | train ndcg@100: 0.98107
+epoch 25 | valid ndcg@100: 0.80457 | best valid: 0.80555 | train ndcg@100: 0.97899
+epoch 26 | valid ndcg@100: 0.80281 | best valid: 0.80555 | train ndcg@100: 0.97783
+epoch 27 | valid ndcg@100: 0.80265 | best valid: 0.80555 | train ndcg@100: 0.98234
+epoch 28 | valid ndcg@100: 0.80387 | best valid: 0.80555 | train ndcg@100: 0.97669
+epoch 29 | valid ndcg@100: 0.80607 | best valid: 0.80607 | train ndcg@100: 0.97868
+epoch 30 | valid ndcg@100: 0.80754 | best valid: 0.80754 | train ndcg@100: 0.97608
+epoch 31 | valid ndcg@100: 0.80948 | best valid: 0.80948 | train ndcg@100: 0.98313
+epoch 32 | valid ndcg@100: 0.80793 | best valid: 0.80948 | train ndcg@100: 0.97944
+epoch 33 | valid ndcg@100: 0.80341 | best valid: 0.80948 | train ndcg@100: 0.97904
+epoch 34 | valid ndcg@100: 0.81092 | best valid: 0.81092 | train ndcg@100: 0.97861
+epoch 35 | valid ndcg@100: 0.80411 | best valid: 0.81092 | train ndcg@100: 0.98101
+epoch 36 | valid ndcg@100: 0.81057 | best valid: 0.81092 | train ndcg@100: 0.98455
+epoch 37 | valid ndcg@100: 0.81148 | best valid: 0.81148 | train ndcg@100: 0.97880
+epoch 38 | valid ndcg@100: 0.80861 | best valid: 0.81148 | train ndcg@100: 0.98023
+epoch 39 | valid ndcg@100: 0.80675 | best valid: 0.81148 | train ndcg@100: 0.97800
+epoch 40 | valid ndcg@100: 0.80992 | best valid: 0.81148 | train ndcg@100: 0.98289
+epoch 41 | valid ndcg@100: 0.80568 | best valid: 0.81148 | train ndcg@100: 0.98220
+epoch 42 | valid ndcg@100: 0.80185 | best valid: 0.81148 | train ndcg@100: 0.98159
+epoch 43 | valid ndcg@100: 0.80568 | best valid: 0.81148 | train ndcg@100: 0.97836
+epoch 44 | valid ndcg@100: 0.80293 | best valid: 0.81148 | train ndcg@100: 0.97909
+epoch 45 | valid ndcg@100: 0.80701 | best valid: 0.81148 | train ndcg@100: 0.97558
+epoch 46 | valid ndcg@100: 0.80848 | best valid: 0.81148 | train ndcg@100: 0.98082
+epoch 47 | valid ndcg@100: 0.80726 | best valid: 0.81148 | train ndcg@100: 0.97475
+epoch 48 | valid ndcg@100: 0.81421 | best valid: 0.81421 | train ndcg@100: 0.98109
+epoch 49 | valid ndcg@100: 0.80576 | best valid: 0.81421 | train ndcg@100: 0.98371
+ndcg@1:         0.62833
+ndcg@5:         0.70148
+ndcg@10:        0.73924
+ndcg@20:        0.76042
+ndcg@50:        0.76775
+ndcg@100:       0.77000
+recall@1:       0.62833
+recall@5:       0.78658
+recall@10:      0.88469
+recall@20:      0.95066
+recall@50:      0.97617
+recall@100:     0.98445
