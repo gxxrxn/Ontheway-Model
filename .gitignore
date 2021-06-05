@@ -6,3 +6,4 @@ db/scrap/
 recvae/.ipynb_checkpoints
 
 !db/data/province_info_final.csv
+!db/data/pos_info.csv
