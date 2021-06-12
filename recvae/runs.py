@@ -30,7 +30,7 @@ parser.add_argument('--n-enc_epochs', type=int, default=3)
 parser.add_argument('--n-dec_epochs', type=int, default=1)
 parser.add_argument('--not-alternating', type=bool, default=False)
 parser.add_argument('--mode', type=str, default='test')
-parser.add_argument('--topk', type=int, default=100)
+parser.add_argument('--topk', type=int, default=200)
 args = parser.parse_args()
 
 seed = 1337
@@ -40,8 +40,10 @@ torch.manual_seed(seed)
 
 #device = torch.device("cuda:0")
 device = torch.device("cpu")
-global model
+
+global model, plat, plon
 model = None
+plat, plon = 37.563525, 126.6939001 # 서울 특별시
 
 class Batch:
     def __init__(self, device, idx, data_in, data_out=None):
@@ -108,15 +110,15 @@ def recommend(data, unique_sid, k=20):
 
 def pos_in(df):
     res = 6371 * math.acos(
-            math.cos(math.radians(35.1643694)) 
-            * math.cos(math.radians(df.lat)) * math.cos(math.radians(df.lon) - math.radians(128.9317153)) 
-            + math.sin(math.radians(35.1643694)) * math.sin(math.radians(df.lat))
+            math.cos(math.radians(plat)) 
+            * math.cos(math.radians(df.lat)) * math.cos(math.radians(df.lon) - math.radians(plon)) 
+            + math.sin(math.radians(plat)) * math.sin(math.radians(df.lat))
         )
     if res > 25:
         return False
     return True
 
-def get_recommend_pid(unique_sid, unique_uid, data, k=100):
+def get_recommend_pid(unique_sid, unique_uid, data, k=200):
      # initialize
     model_kwargs = {
         'hidden_dim': args.hidden_dim,
@@ -125,6 +127,7 @@ def get_recommend_pid(unique_sid, unique_uid, data, k=100):
     }
 
     PATH = os.path.join('recvae/model',os.listdir('recvae/model')[-1])
+
     global model
     if model == None:
         print('❤️❤️❤️❤️')
@@ -161,7 +164,7 @@ def get_recommend_pid(unique_sid, unique_uid, data, k=100):
         pname = id2place[str(int(i[0]))]
         ppos = pd.DataFrame(posdata.loc[posdata['place'] == str(pname)]['pos'])
         if ppos.empty:
-            drop_idx.append(recs.loc[np.float64(recs['0']) == i].index)
+            drop_idx.append(recs.loc[np.float64(recs[0]) == i].index)
             continue
         
         ppos = eval(posdata.loc[posdata['place'] == str(pname)].iloc[0]['pos'])
@@ -189,8 +192,20 @@ def get_recommend_pid(unique_sid, unique_uid, data, k=100):
 
     return fin_result.to_json()
 
-def run(data=None, mode='test'):
+def run(data=None, province_info=None, mode='test'):
+    global plat, plon
+
+    if province_info is not None:
+        plat = float(province_info['lat'])
+        plon = float(province_info['lon'])
+    
+    # province_data = pd.read_csv(open(os.path.join('db/data', 'province_info_final.csv')))
+    # province_pos = eval(province_data.loc[province_data['name']==province]['pos'].values[0])
+    # plat = province_info[0]
+    # plon = province_pos[1]
+
     unique_sid, unique_uid, tp = preprocess.go(data, mode='test')
+
 
     n_items = len(unique_sid)
     n_users = len(unique_uid)
@@ -204,7 +219,7 @@ def run(data=None, mode='test'):
                                 shape=(n_users, n_items))
     # practice_data = get_test_data(unique_sid, unique_uid, args.dataset)
 
-    return get_recommend_pid(unique_sid, unique_uid, practice_data, 100)
+    return get_recommend_pid(unique_sid, unique_uid, practice_data, 200)
 
 # if __name__ == "__main__":
 #     if args.mode == 'train':

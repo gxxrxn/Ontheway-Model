@@ -1,0 +1,3 @@
+ERROR conda.cli.main_run:execute(32): Subprocess for 'conda run ['gunicorn', 'app:app', '--bind=0.0.0.0:5000']' command failed.  (See above for error)
+/home/ubuntu/anaconda3/envs/ontheway/.tmp6all1e23: line 3: gunicorn: command not found
+
